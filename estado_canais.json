@@ -1,4 +1,37 @@
 {
-  "canais": {},
-  "atualizado_em": "2026-10-25T13:23:40"
+  "canais": {
+    "https://vz-668c4853-3ab.b-cdn.net/685b75e6-9ca9-4c05-91b1-6379ea166876/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "Filme 01",
+      "url": "https://vz-668c4853-3ab.b-cdn.net/685b75e6-9ca9-4c05-91b1-6379ea166876/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Filmes",
+      "logo": "https://vz-668c4853-3ab.b-cdn.net/685b75e6-9ca9-4c05-91b1-6379ea166876/thumbnail.jpg",
+      "falhas": 0,
+      "visto_em": "2026-10-25T13:29:44"
+    },
+    "https://vz-ce1e5031-6d5.b-cdn.net/694fa57c-cfcd-4bde-8146-ffaf8724ba89/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "Filme 02",
+      "url": "https://vz-ce1e5031-6d5.b-cdn.net/694fa57c-cfcd-4bde-8146-ffaf8724ba89/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Filmes",
+      "logo": "https://vz-ce1e5031-6d5.b-cdn.net/694fa57c-cfcd-4bde-8146-ffaf8724ba89/thumbnail.jpg",
+      "falhas": 0,
+      "visto_em": "2026-10-25T13:29:44"
+    },
+    "https://vz-ce1e5031-6d5.b-cdn.net/a28fa0fe-db36-4ca8-8d27-104e46fe44f2/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "Filme 03",
+      "url": "https://vz-ce1e5031-6d5.b-cdn.net/a28fa0fe-db36-4ca8-8d27-104e46fe44f2/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Filmes",
+      "logo": "https://vz-ce1e5031-6d5.b-cdn.net/a28fa0fe-db36-4ca8-8d27-104e46fe44f2/thumbnail.jpg",
+      "falhas": 0,
+      "visto_em": "2026-10-25T13:29:44"
+    },
+    "https://vz-ce1e5031-6d5.b-cdn.net/0065048c-71b2-409c-8231-c720f5be2091/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "Filme 04",
+      "url": "https://vz-ce1e5031-6d5.b-cdn.net/0065048c-71b2-409c-8231-c720f5be2091/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Filmes",
+      "logo": "https://vz-ce1e5031-6d5.b-cdn.net/0065048c-71b2-409c-8231-c720f5be2091/thumbnail.jpg",
+      "falhas": 0,
+      "visto_em": "2026-10-25T13:29:44"
+    }
+  },
+  "atualizado_em": "2026-10-25T13:29:44"
 }
