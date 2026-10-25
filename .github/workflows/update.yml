@@ -1,1 +1,60 @@
+name: Atualizar playlist SO Play Filmes (auto)
 
+on:
+  schedule:
+    # A cada 6 horas (UTC) = 03h, 09h, 15h, 21h em Brasília (UTC-3)
+    - cron: "0 */6 * * *"
+  workflow_dispatch: {}   # botao "Run workflow" no GitHub
+
+permissions:
+  contents: write
+
+concurrency:
+  group: soplay-filmes-m3u-auto
+  cancel-in-progress: false
+
+jobs:
+  gerar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Gerar playlist
+        env:
+          # Opcionais — Settings > Secrets and variables > Actions
+          SOPLAY_API: ${{ secrets.SOPLAY_API }}
+          SOPLAY_TOKEN: ${{ secrets.SOPLAY_TOKEN }}
+          # NUNCA ligue SOPLAY_CHECK no runner (IP fora do BR)
+        run: |
+          set -e
+          python gerar_soplay_filmes.py
+          echo "---"
+          echo "Linhas na playlist:"
+          wc -l playlists/soplay_filmes.m3u || true
+          echo "Itens no estado:"
+          python -c "import json; d=json.load(open('estado_canais.json')); print(len(d.get('canais',{})))" || true
+
+      - name: Commit e push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add playlists/soplay_filmes.m3u estado_canais.json seed/soplay_filmes_seed.m3u || true
+          if git diff --cached --quiet; then
+            echo "Sem mudancas — lista ja esta atualizada."
+            exit 0
+          fi
+          git commit -m "auto: atualizacao SO Play Filmes $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3 4 5; do
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && break
+            echo "retry pull $i"; sleep 4
+          done
+          git push origin "HEAD:${GITHUB_REF_NAME}"
