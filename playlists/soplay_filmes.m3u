@@ -1,6 +1,6 @@
 #EXTM3U
 #PLAYLIST: SO Play Filmes auto (SS IPTV)
-#UPDATED: 2026-10-25T14:09:27
+#UPDATED: 2026-10-25T14:14:05
 #EXTSIZE: medium
 #EXTINF:-1 tvg-name="36 Horas de Guerra" tvg-logo="https://images.nxtv.com.br/resize/6883c42c89d44_5d21c771649179788678a49ce33c203d.jpg" group-title="Acao",36 Horas de Guerra
 https://vz-5fbb03ca-1d4.b-cdn.net/7464c990-b5b9-45b2-a82a-299fab0598b5/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
@@ -32,8 +32,6 @@ https://vz-5fbb03ca-1d4.b-cdn.net/639c0906-6368-4c23-9a46-1580a786cd2a/playlist.
 https://vz-ce1e5031-6d5.b-cdn.net/bdf30c12-1c48-4a80-809d-6405273c62b4/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="Criaturas Divinas" tvg-logo="https://images.nxtv.com.br/resize/movies/covers/6978a81534dad_1769515029.webp" group-title="Acao",Criaturas Divinas
 https://vz-5fbb03ca-1d4.b-cdn.net/d5d611e8-06b6-4e4a-b844-6bafb933dbc8/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
-#EXTINF:-1 tvg-name="D'Artagnan, o 4º Mosqueteiro" tvg-logo="https://images.nxtv.com.br/resize/6883d7a596a53_22b003322fa78baf23b12afb97889170.jpg" group-title="Acao",D'Artagnan, o 4º Mosqueteiro
-https://vz-5fbb03ca-1d4.b-cdn.net/a4b7de77-ad28-4c1c-ac44-ee3ac7b51470/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="Depois da Escuridão" tvg-logo="https://images.nxtv.com.br/resize/movies/covers/6978a70288c27_1769514754.png" group-title="Acao",Depois da Escuridão
 https://vz-5fbb03ca-1d4.b-cdn.net/b20c4222-1a62-4fe0-9d43-dfddc9c7d35e/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="Diablo: A Última Corrida" tvg-logo="https://images.nxtv.com.br/resize/movies/covers/6a4e480bcf76f_1783515147.webp" group-title="Acao",Diablo: A Última Corrida
@@ -66,6 +64,8 @@ https://vz-ce1e5031-6d5.b-cdn.net/8ac6acc2-4e63-4ed9-8b8f-c5a1e9b3cede/playlist.
 https://vz-5fbb03ca-1d4.b-cdn.net/13f88a76-f21a-4c66-88cb-787aa3aa0f65/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="Massacre no Bairro Chinês" tvg-logo="https://images.nxtv.com.br/resize/6883df0e6375a_8204122d9f517ffdf856eaddeb6607d5.jpg" group-title="Acao",Massacre no Bairro Chinês
 https://vz-5fbb03ca-1d4.b-cdn.net/5e606781-85f8-41d8-a4dd-e95f14071f96/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="o 4º Mosqueteiro" tvg-logo="https://images.nxtv.com.br/resize/6883d7a596a53_22b003322fa78baf23b12afb97889170.jpg" group-title="Acao",D'Artagnan, o 4º Mosqueteiro" tvg-logo="https://images.nxtv.com.br/resize/6883d7a596a53_22b003322fa78baf23b12afb97889170.jpg" group-title="Acao",o 4º Mosqueteiro" tvg-logo="https://images.nxtv.com.br/resize/6883d7a596a53_22b003322fa78baf23b12afb97889170.jpg" group-title="Acao",D'Artagnan, o 4º Mosqueteiro
+https://vz-5fbb03ca-1d4.b-cdn.net/a4b7de77-ad28-4c1c-ac44-ee3ac7b51470/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="O Despertar de um Assassino" tvg-logo="https://images.nxtv.com.br/resize/6884bf6e5e14e_2254477cb6903ed9c049aee8ca88f241.webp" group-title="Acao",O Despertar de um Assassino
 https://vz-5fbb03ca-1d4.b-cdn.net/d70029f8-871f-4f82-b054-51faab7bf0d7/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="O Jovem Viking" tvg-logo="https://images.nxtv.com.br/resize/movies/covers/6a5124c28f0fe_1783702722.webp" group-title="Acao",O Jovem Viking
@@ -88,10 +88,10 @@ https://vz-ce1e5031-6d5.b-cdn.net/c58223bd-3f49-4f5b-a63c-9689ad5c0dc8/playlist.
 https://vz-ce1e5031-6d5.b-cdn.net/8ce2f98c-555a-47f1-bfab-993f4011d8f3/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="Refém" tvg-logo="https://images.nxtv.com.br/resize/movies/covers/6a58c7950b38d_1784203157.webp" group-title="Acao",Refém
 https://vz-ce1e5031-6d5.b-cdn.net/3c5b8524-e8cc-41bc-a56e-4fdf19e4950b/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="Render-se Jamais" tvg-logo="https://images.nxtv.com.br/resize/6884c24cb86e4_c4ad331ad8098fcce584fea81d0e25d7.webp" group-title="Acao",Retroceder Nunca, Render-se Jamais" tvg-logo="https://images.nxtv.com.br/resize/6884c24cb86e4_c4ad331ad8098fcce584fea81d0e25d7.webp" group-title="Acao",Render-se Jamais" tvg-logo="https://images.nxtv.com.br/resize/6884c24cb86e4_c4ad331ad8098fcce584fea81d0e25d7.webp" group-title="Acao",Retroceder Nunca, Render-se Jamais
+https://vz-ce1e5031-6d5.b-cdn.net/b55cbdb2-17bf-4526-916f-df2205143e18/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="Resgate no Oeste" tvg-logo="https://images.nxtv.com.br/resize/movies/covers/6a5783889224c_1784120200.webp" group-title="Acao",Resgate no Oeste
 https://vz-ce1e5031-6d5.b-cdn.net/11e87b5b-a8fa-42fa-9d48-82dd384409d4/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
-#EXTINF:-1 tvg-name="Retroceder Nunca, Render-se Jamais" tvg-logo="https://images.nxtv.com.br/resize/6884c24cb86e4_c4ad331ad8098fcce584fea81d0e25d7.webp" group-title="Acao",Retroceder Nunca, Render-se Jamais
-https://vz-ce1e5031-6d5.b-cdn.net/b55cbdb2-17bf-4526-916f-df2205143e18/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="Ruas em Guerra" tvg-logo="https://images.nxtv.com.br/resize/movies/covers/6a4cef00c3d3a_1783426816.jpeg" group-title="Acao",Ruas em Guerra
 https://vz-ce1e5031-6d5.b-cdn.net/66e570cf-3d29-4fa1-b6bf-e30b4b47c045/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="Terra dos Bravos" tvg-logo="https://images.nxtv.com.br/resize/6884c2a48cf3e_4ccaea27663afbdf1c6956e0c8ee58ec.webp" group-title="Acao",Terra dos Bravos
@@ -180,6 +180,14 @@ https://vz-5fbb03ca-1d4.b-cdn.net/7102f8e9-7cc2-4d9a-9160-c3989652c964/playlist.
 https://vz-5fbb03ca-1d4.b-cdn.net/60cd37ea-dced-482c-b003-38617314dbf0/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="Uma História Americana" tvg-logo="https://images.nxtv.com.br/resize/movies/covers/6a55131ec7f5f_1783960350.webp" group-title="Drama",Uma História Americana
 https://vz-ce1e5031-6d5.b-cdn.net/ca44cf9c-e8df-4a92-9146-dc257c9dc81a/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="Acelerados" group-title="Esportes",Acelerados
+https://origin-fast.b-cdn.net/ACELERADOS/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="Desimpedidos" group-title="Esportes",Desimpedidos
+https://origin-fast.b-cdn.net/DESIMPEDIDOS/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="Fuel TV" group-title="Esportes",Fuel TV
+https://origin-fast.b-cdn.net/FUEL_TV/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="NSports" group-title="Esportes",NSports
+https://origin-fast.b-cdn.net/NSPORTS/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="Ao Lado de Cristo" tvg-logo="https://images.nxtv.com.br/resize/movies/covers/69e8b28e4ae17_1776857742.webp" group-title="Fe E Espiritualidade",Ao Lado de Cristo
 https://vz-5fbb03ca-1d4.b-cdn.net/39ce08f3-9c8b-4acc-aa03-4cd897f77374/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="Uma Missão de Fé" tvg-logo="https://images.nxtv.com.br/resize/movies/covers/6a58d80e0f201_1784207374.webp" group-title="Fe E Espiritualidade",Uma Missão de Fé
@@ -188,14 +196,30 @@ https://vz-ce1e5031-6d5.b-cdn.net/44398c7c-69c2-443f-8a14-b57d740bc32c/playlist.
 https://vz-5fbb03ca-1d4.b-cdn.net/cca8347d-8cff-478d-aef8-c01926deecce/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="O Contato" tvg-logo="https://images.nxtv.com.br/resize/movies/covers/6a7e274d112b3_1786652493.webp" group-title="Ficcao",O Contato
 https://vz-ce1e5031-6d5.b-cdn.net/c0bc01a6-a050-498f-bc8e-0470c70fb199/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="Bora Filmes" group-title="Filmes",Bora Filmes
+https://origin-fast.b-cdn.net/BORAFILMES_FAST/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="Film Action" group-title="Filmes",Film Action
+https://origin-fast.b-cdn.net/FILM_ACTION/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="Film Emotion" group-title="Filmes",Film Emotion
+https://origin-fast.b-cdn.net/FILM_EMOTION/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="Film Family" group-title="Filmes",Film Family
+https://origin-fast.b-cdn.net/FILM_FAMILY/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="Film Plus" group-title="Filmes",Film Plus
+https://origin-fast.b-cdn.net/FILM_PLUS/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="Film Plus Family" group-title="Filmes",Film Plus Family
+https://ssai.nxtv.com.br/c/film-family/v00000001000000001231a4c94614e203/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="Filme 01" tvg-logo="https://vz-668c4853-3ab.b-cdn.net/685b75e6-9ca9-4c05-91b1-6379ea166876/thumbnail.jpg" group-title="Filmes",Filme 01
 https://vz-668c4853-3ab.b-cdn.net/685b75e6-9ca9-4c05-91b1-6379ea166876/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="Filme 03" tvg-logo="https://vz-ce1e5031-6d5.b-cdn.net/a28fa0fe-db36-4ca8-8d27-104e46fe44f2/thumbnail.jpg" group-title="Filmes",Filme 03
 https://vz-ce1e5031-6d5.b-cdn.net/a28fa0fe-db36-4ca8-8d27-104e46fe44f2/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="Western Bound" group-title="Filmes",Western Bound
+https://origin-fast.b-cdn.net/WESTERN_BOUND/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="As Aventuras de Petey e Seus Amigos" tvg-logo="https://images.nxtv.com.br/resize/movies/covers/69f8f145d931b_1777922373.webp" group-title="Infantil",As Aventuras de Petey e Seus Amigos
 https://vz-5fbb03ca-1d4.b-cdn.net/451ecd78-01d0-445c-aacb-089cbbe56711/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="As Aventuras de uma Super Professora" tvg-logo="https://images.nxtv.com.br/resize/68165e3cd59f9_d50c205d160155ab7e5d8302670f6c78.jpg" group-title="Infantil",As Aventuras de uma Super Professora
 https://vz-5fbb03ca-1d4.b-cdn.net/609e904b-e833-408a-a2c3-c4fa96c5f3c4/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="Leo e Lully" group-title="Infantil",Leo e Lully
+https://origin-fast.b-cdn.net/LEO_E_LULLY/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="Meu Querido Elfo" tvg-logo="https://images.nxtv.com.br/resize/movies/covers/6979f5212fdde_1769600289.jpg" group-title="Infantil",Meu Querido Elfo
 https://vz-5fbb03ca-1d4.b-cdn.net/0150dc63-5705-4ba5-a16e-588c9e33a8c5/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="O Garoto Formiga 2" tvg-logo="https://images.nxtv.com.br/resize/67ffa7bb03517_eba3338021636400adde7244701d1695.jpg" group-title="Infantil",O Garoto Formiga 2
@@ -204,12 +228,26 @@ https://vz-5fbb03ca-1d4.b-cdn.net/7c00a280-cd40-4993-8153-f536da6cc4c6/playlist.
 https://vz-ce1e5031-6d5.b-cdn.net/0b09f4b1-ee0a-4087-a1bf-9da625f3c3b5/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="Um Verão Inesquecível" tvg-logo="https://images.nxtv.com.br/resize/movies/covers/6979f6fd891ad_1769600765.png" group-title="Infantil",Um Verão Inesquecível
 https://vz-5fbb03ca-1d4.b-cdn.net/3cdd09c6-77e4-4c8e-9ffa-68c2e8ac258c/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="BM&C News" group-title="Noticias",BM&C News
+https://origin-fast.b-cdn.net/BMC_NEWS/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="CNN Brasil" group-title="Noticias",CNN Brasil
+https://origin-fast.b-cdn.net/CNN_BRASIL/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="CNN Brasil Money" group-title="Noticias",CNN Brasil Money
+https://origin-fast.b-cdn.net/CNN_MONEY/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="Oeste TV" group-title="Noticias",Oeste TV
+https://origin-fast.b-cdn.net/OESTE_TV/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="Record News" group-title="Noticias",Record News
+https://origin-fast.b-cdn.net/RECORD_NEWS/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="Times Brasil CNBC" group-title="Noticias",Times Brasil CNBC
+https://origin-fast.b-cdn.net/CNBC/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="Hacker: Todo Crime Tem Um Início" tvg-logo="https://images.nxtv.com.br/resize/movies/covers/6a82ed3c19929_1786965308.jpg" group-title="Policial",Hacker: Todo Crime Tem Um Início
 https://vz-ce1e5031-6d5.b-cdn.net/503c0779-a241-47f4-970e-b40163ae23b4/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="No Rastro da Violência" tvg-logo="https://images.nxtv.com.br/resize/movies/covers/6a7f1b7ef3112_1786715006.jpg" group-title="Policial",No Rastro da Violência
 https://vz-ce1e5031-6d5.b-cdn.net/947d4082-81b2-4a34-9e15-9e1c958bc7a8/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="O Acerto" tvg-logo="https://images.nxtv.com.br/resize/movies/covers/6a7f2158d6f71_1786716504.jpg" group-title="Policial",O Acerto
 https://vz-ce1e5031-6d5.b-cdn.net/2d40addd-815a-46c9-af38-ff91697d618d/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="TV Aparecida" group-title="Religiosos",TV Aparecida
+https://origin-fast.b-cdn.net/TV_APARECIDA/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="A Colheita" tvg-logo="https://images.nxtv.com.br/resize/6800450bb9e00_8ad00c835839063002b6714676363aee.jpg" group-title="Terror",A Colheita
 https://vz-5fbb03ca-1d4.b-cdn.net/c2e6c59f-8a00-4853-88a8-784a50259978/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="A Presa" tvg-logo="https://images.nxtv.com.br/resize/movies/covers/6a8445f76d956_1787053559.jpg" group-title="Terror",A Presa
@@ -266,3 +304,29 @@ https://vz-ce1e5031-6d5.b-cdn.net/b1f518b3-2b9d-4125-8c70-1154c508669e/playlist.
 https://vz-ce1e5031-6d5.b-cdn.net/689062bc-dec2-4f3b-95dc-bc723b36d500/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
 #EXTINF:-1 tvg-name="Sono Mortal" tvg-logo="https://images.nxtv.com.br/resize/movies/covers/6a7e2fca6f0ab_1786654666.jpg" group-title="Terror",Sono Mortal
 https://vz-ce1e5031-6d5.b-cdn.net/23805924-e187-4caa-a8da-275d907cb460/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="Agroplus" group-title="Variedades",Agroplus
+https://origin-fast.b-cdn.net/AGRO_PLUS/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="Canal do Artesanato" group-title="Variedades",Canal do Artesanato
+https://origin-fast.b-cdn.net/ARTESANATO/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="Entretendo" group-title="Variedades",Entretendo
+https://origin-fast.b-cdn.net/ENTRETENDO_FAST/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="GPTV" group-title="Variedades",GPTV
+https://origin-fast.b-cdn.net/GPTV/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="NxPlay 1889892" group-title="Variedades",NxPlay 1889892
+https://edge-proxy-mediatailor-ww2ae.b-cdn.net/nxplay/1889892/master.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="NxPlay 2082836" group-title="Variedades",NxPlay 2082836
+https://edge-proxy.nxtv.com.br/nxplay/2082836/master.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="NxPlay 2222223" group-title="Variedades",NxPlay 2222223
+https://edge-proxy-mediatailor-ww2ae.b-cdn.net/nxplay/2222223/master.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="NxPlay 8292355" group-title="Variedades",NxPlay 8292355
+https://edge-proxy-mediatailor-ww2ae.b-cdn.net/nxplay/8292355/master.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="PlayTV" group-title="Variedades",PlayTV
+https://origin-fast.b-cdn.net/PLAY_TV/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="RBTi+ TV" group-title="Variedades",RBTi+ TV
+https://origin-fast.b-cdn.net/RBTi_MAIS_TV/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="Rede Mosaico" group-title="Variedades",Rede Mosaico
+https://origin-fast.b-cdn.net/MOSAICO/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="Travel Plus" group-title="Variedades",Travel Plus
+https://origin-fast.b-cdn.net/TRAVEL_PLUS/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
+#EXTINF:-1 tvg-name="Vivax TV" group-title="Variedades",Vivax TV
+https://origin-fast.b-cdn.net/VIVAX/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638
