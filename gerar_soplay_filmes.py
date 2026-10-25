@@ -36,6 +36,7 @@ OUT_DIR    = "playlists"
 OUT_FILE   = os.path.join(OUT_DIR, "soplay_filmes.m3u")
 STATE_FILE = "estado_canais.json"
 SEED_FILE  = os.path.join("seed", "soplay_filmes_seed.m3u")
+JSON_DUMP  = os.path.join("seed", "filmes_api.json")  # cole aqui o JSON do F12
 DEBUG_DIR  = "debug_soplay_filmes"
 
 MAX_FALHAS = 3
@@ -220,16 +221,17 @@ def _dump_debug(nome: str, conteudo) -> None:
 CAMPO_NOME = ("name", "title", "nome", "channel_name", "titulo", "label",
               "channelName", "movie_name", "movieName", "content_name",
               "contentName", "original_title", "originalTitle")
-CAMPO_URL  = ("url", "stream", "stream_url", "streamUrl", "link", "source", "src",
-              "hls", "m3u8", "playback_url", "playbackUrl", "file", "hls_url",
-              "hlsUrl", "manifest", "playlist", "video_url", "videoUrl",
-              "media_url", "mediaUrl", "play_url", "playUrl")
-CAMPO_GRUPO = ("group", "group_title", "groupTitle", "category", "categoria",
-               "genre", "genero", "grupo", "section", "type", "category_name",
-               "categoryName", "tag", "genres", "genre_name")
-CAMPO_LOGO = ("logo", "image", "img", "icon", "thumbnail", "thumb", "poster",
-              "cover", "logo_url", "tvg_logo", "picture", "image_url", "imageUrl",
-              "poster_url", "posterUrl", "backdrop")
+CAMPO_URL  = ("url_hls", "url_dash", "url", "stream", "stream_url", "streamUrl",
+              "link", "source", "src", "hls", "m3u8", "playback_url", "playbackUrl",
+              "file", "hls_url", "hlsUrl", "manifest", "playlist", "video_url",
+              "videoUrl", "media_url", "mediaUrl", "play_url", "playUrl", "trailer",
+              "video", "playback", "content_url", "contentUrl")
+CAMPO_GRUPO = ("category_name", "categoryName", "group", "group_title", "groupTitle",
+               "category", "categoria", "genre", "genero", "grupo", "section",
+               "type", "tag", "genres", "genre_name")
+CAMPO_LOGO = ("cover", "logo", "image", "img", "icon", "thumbnail", "thumb", "poster",
+              "logo_url", "tvg_logo", "picture", "image_url", "imageUrl",
+              "poster_url", "posterUrl", "backdrop", "banner", "banner_mobile")
 
 
 def _primeiro(d: dict, chaves) -> str:
@@ -278,6 +280,7 @@ def _achar_lista_canais(obj) -> list:
 def _parse_m3u(texto: str) -> list[dict]:
     canais = []
     nome = grupo = logo = ""
+    duration = 0
     for linha in texto.splitlines():
         linha = linha.strip()
         if linha.startswith("#EXTINF"):
@@ -285,29 +288,83 @@ def _parse_m3u(texto: str) -> list[dict]:
             grupo = m.group(1) if m else ""
             m = re.search(r'tvg-logo="([^"]*)"', linha, re.I)
             logo = m.group(1) if m else ""
+            m = re.search(r'#EXTINF:(-?\d+)', linha)
+            try:
+                duration = int(m.group(1)) if m else 0
+            except (TypeError, ValueError):
+                duration = 0
+            if duration < 0:
+                duration = 0
             nome = linha.split(",", 1)[-1].strip()
         elif linha and not linha.startswith("#"):
-            canais.append({"nome": nome, "url": linha, "grupo": grupo, "logo": logo})
+            canais.append({"nome": nome, "url": linha, "grupo": grupo,
+                           "logo": logo, "duration": duration})
             nome = grupo = logo = ""
+            duration = 0
     return canais
 
 
 # Endpoints candidatos para catalogo de filmes / VOD
+# /api/movies retorna todas as categorias com content[] (token obrigatorio)
 CANDIDATOS_API = [
     "https://gateway.nxtv.com.br/api/movies",
+    "https://gateway.nxtv.com.br/api/movies/category/2215",
+    "https://gateway.nxtv.com.br/api/movies/category/2368",
+    "https://gateway.nxtv.com.br/api/movies/category/2206",
+    "https://gateway.nxtv.com.br/api/movies/category/2210",
+    "https://gateway.nxtv.com.br/api/movies/category/2209",
+    "https://gateway.nxtv.com.br/api/movies/category/2359",
+    "https://gateway.nxtv.com.br/api/movies/category/2208",
+    "https://gateway.nxtv.com.br/api/movies/category/2211",
+    "https://gateway.nxtv.com.br/api/movies/category/2213",
+    "https://gateway.nxtv.com.br/api/movies/category/2214",
+    "https://gateway.nxtv.com.br/api/movies/category/2207",
     "https://gateway.nxtv.com.br/api/v1/movies",
     "https://gateway.nxtv.com.br/api/vod",
-    "https://gateway.nxtv.com.br/api/v1/vod",
-    "https://gateway.nxtv.com.br/api/content/movies",
-    "https://gateway.nxtv.com.br/api/content/vod",
-    "https://gateway.nxtv.com.br/api/catalog/movies",
-    "https://gateway.nxtv.com.br/api/catalog",
     "https://soplay.com.br/api/movies",
     "https://soplay.com.br/api/filmes",
-    "https://soplay.com.br/api/vod",
-    "https://soplay.com.br/api/v1/movies",
-    "https://soplay.com.br/api/content",
 ]
+
+
+
+def carregar_json_dump() -> list[dict]:
+    """Lê seed/filmes_api.json (cole o JSON do F12 Network > Response)."""
+    if not os.path.exists(JSON_DUMP):
+        return []
+    try:
+        with open(JSON_DUMP, encoding="utf-8") as f:
+            raw = f.read().strip()
+        if not raw:
+            return []
+        obj = json.loads(raw)
+        lista = _achar_lista_canais(obj) if not isinstance(obj, list) else [
+            x for x in obj if isinstance(x, dict) and (
+                _primeiro(x, CAMPO_URL) and _primeiro(x, CAMPO_NOME)
+            )
+        ]
+        # se lista vazia mas obj é lista de dicts com trailer/title
+        if not lista and isinstance(obj, list):
+            for it in obj:
+                if not isinstance(it, dict):
+                    continue
+                nome = _primeiro(it, CAMPO_NOME)
+                url = _primeiro(it, CAMPO_URL)
+                if nome and url:
+                    lista.append(it)
+        brutos = []
+        for it in lista:
+            brutos.append({
+                "nome":  _primeiro(it, CAMPO_NOME),
+                "url":   _primeiro(it, CAMPO_URL),
+                "grupo": _primeiro(it, CAMPO_GRUPO) or "Filmes",
+                "logo":  _primeiro(it, CAMPO_LOGO),
+                "duration": _duracao_segundos(it),
+            })
+        log(f"  [json] {len(brutos)} itens em {JSON_DUMP}")
+        return brutos
+    except Exception as e:
+        log(f"  [json] erro lendo {JSON_DUMP}: {e}")
+        return []
 
 
 def carregar_seed() -> list[dict]:
@@ -323,11 +380,103 @@ def carregar_seed() -> list[dict]:
         return []
 
 
+
+def _duracao_segundos(it: dict) -> int:
+    """Converte video_duration da API (minutos) ou valor ja em segundos para int > 0."""
+    raw = it.get("video_duration") or it.get("duration") or it.get("duracao") or 0
+    try:
+        v = int(float(raw))
+    except (TypeError, ValueError):
+        return 0
+    if v <= 0:
+        return 0
+    # API SoPlay manda minutos (ex: 95). Se vier > 600, assume ja ser segundos.
+    if v <= 600:
+        return v * 60
+    return v
+
+
+def _fmt_duracao(segundos: int) -> str:
+    """Formata segundos como 1h35min ou 45min."""
+    try:
+        s = int(segundos)
+    except (TypeError, ValueError):
+        return ""
+    if s <= 0:
+        return ""
+    h, rem = divmod(s, 3600)
+    m = rem // 60
+    if h > 0 and m > 0:
+        return f"{h}h{m:02d}min"
+    if h > 0:
+        return f"{h}h"
+    return f"{m}min"
+
+
+def _extrair_filmes_api(obj) -> list[dict]:
+    """Extrai filmes do formato SoPlay/NxTV (lista plana ou categorias com content[])."""
+    brutos: list[dict] = []
+
+    def add(it: dict, grupo_fallback: str = "") -> None:
+        if not isinstance(it, dict):
+            return
+        nome = _primeiro(it, CAMPO_NOME)
+        url = _primeiro(it, CAMPO_URL)
+        mid = it.get("id")
+        if not nome:
+            return
+        grupo = _primeiro(it, CAMPO_GRUPO) or grupo_fallback or "Filmes"
+        logo = _primeiro(it, CAMPO_LOGO)
+        brutos.append({
+            "nome": nome,
+            "url": url or "",
+            "grupo": grupo,
+            "logo": logo,
+            "id": mid,
+            "duration": _duracao_segundos(it),
+        })
+
+    if isinstance(obj, list):
+        if obj and isinstance(obj[0], dict) and "content" in obj[0]:
+            for cat in obj:
+                label = (cat.get("cat_label") or cat.get("category_name")
+                         or cat.get("name") or "")
+                for it in (cat.get("content") or []):
+                    add(it, label)
+        else:
+            for it in obj:
+                add(it)
+    elif isinstance(obj, dict):
+        for key in ("content", "data", "movies", "items", "results"):
+            if isinstance(obj.get(key), list):
+                return _extrair_filmes_api(obj[key])
+        for it in _achar_lista_canais(obj):
+            add(it)
+    return brutos
+
+
+def _detalhe_filme(movie_id) -> dict | None:
+    """Busca /api/movie/{id} para obter url_hls completo."""
+    if not movie_id:
+        return None
+    url = f"https://gateway.nxtv.com.br/api/movie/{movie_id}"
+    try:
+        dados = http_get(url)
+        obj = json.loads(dados)
+        if isinstance(obj, dict) and obj.get("id"):
+            return obj
+    except Exception as e:
+        log(f"  [detail] falhou movie/{movie_id}: {e}")
+    return None
+
+
 def coletar_api() -> list[dict]:
-    """Tenta API autenticada (secrets) + candidatos publicos de filmes/VOD."""
+    """API autenticada: /api/movies (catalogo) + /api/movie/{id} (url_hls)."""
     api = os.environ.get("SOPLAY_API")
     urls = ([api] if api else []) + CANDIDATOS_API
-    brutos = []
+    brutos: list[dict] = []
+    ids_vistos: set = set()
+
     for url in urls:
         if not url:
             continue
@@ -339,17 +488,30 @@ def coletar_api() -> list[dict]:
         _dump_debug("api_" + _slug(url)[:40] + ".txt", dados)
         try:
             obj = json.loads(dados)
-            lista = _achar_lista_canais(obj)
+            lista = _extrair_filmes_api(obj)
             if lista:
-                log(f"  [api] {len(lista)} itens JSON em {url}")
+                log(f"  [api] {len(lista)} entradas em {url}")
+                # indices por id para preferir categoria de genero
+                por_id = {b.get("id"): i for i, b in enumerate(brutos) if b.get("id") is not None}
+                genericas = {"recomendados", "mais assistidos da semana", "mais assistidos",
+                             "destaques", "lancamentos", "filmes"}
                 for it in lista:
-                    brutos.append({
-                        "nome":  _primeiro(it, CAMPO_NOME),
-                        "url":   _primeiro(it, CAMPO_URL),
-                        "grupo": _primeiro(it, CAMPO_GRUPO),
-                        "logo":  _primeiro(it, CAMPO_LOGO),
-                    })
-                break
+                    mid = it.get("id")
+                    if mid is not None and mid in por_id:
+                        # troca grupo se o novo for mais especifico
+                        prev = brutos[por_id[mid]]
+                        g_new = _slug(it.get("grupo") or "")
+                        g_old = _slug(prev.get("grupo") or "")
+                        if g_old in genericas and g_new not in genericas:
+                            prev["grupo"] = it.get("grupo") or prev["grupo"]
+                        continue
+                    if mid is not None:
+                        ids_vistos.add(mid)
+                        por_id[mid] = len(brutos)
+                    brutos.append(it)
+                if "/api/movies" in url and "category" not in url:
+                    break
+                continue
         except (ValueError, json.JSONDecodeError):
             pass
         if "#EXTINF" in dados:
@@ -358,8 +520,39 @@ def coletar_api() -> list[dict]:
                 log(f"  [api] {len(lista)} itens M3U em {url}")
                 brutos.extend(lista)
                 break
-    return brutos
 
+    # Completa url_hls via /api/movie/{id} para quem nao tem stream na lista
+    faltando = [b for b in brutos if b.get("id") and not (b.get("url") or "").startswith("http")]
+    com_url = [b for b in brutos if (b.get("url") or "").startswith("http")]
+    log(f"  [api] com stream na lista: {len(com_url)} | precisando detail: {len(faltando)}")
+
+    if faltando:
+        resolvidos = 0
+        with ThreadPoolExecutor(max_workers=12) as ex:
+            futs = {ex.submit(_detalhe_filme, b["id"]): b for b in faltando}
+            for f in as_completed(futs):
+                base = futs[f]
+                det = f.result()
+                if not det:
+                    continue
+                url = _primeiro(det, CAMPO_URL)
+                if not url:
+                    continue
+                base["url"] = url
+                if not base.get("logo"):
+                    base["logo"] = _primeiro(det, CAMPO_LOGO)
+                if not base.get("grupo") or base["grupo"] == "Filmes":
+                    g = _primeiro(det, CAMPO_GRUPO)
+                    if g:
+                        base["grupo"] = g
+                dur = _duracao_segundos(det)
+                if dur > 0:
+                    base["duration"] = dur
+                resolvidos += 1
+        log(f"  [api] details resolvidos: {resolvidos}/{len(faltando)}")
+
+    # descarta quem ainda nao tem url
+    return [b for b in brutos if (b.get("url") or "").startswith("http")]
 
 
 
@@ -429,13 +622,27 @@ def escrever_m3u(canais: list[dict], path: str = OUT_FILE, header_extra: list | 
             "#PLAYLIST: SO Play Filmes auto (SS IPTV)",
             f"#UPDATED: {dt.datetime.now().isoformat(timespec='seconds')}",
             "#EXTSIZE: medium",
+            "#EXTM3U type=vod",
         ]
     for cat in sorted(por_cat, key=lambda x: _slug(x)):
         for c in sorted(por_cat[cat], key=lambda x: _slug(x["nome"])):
             logo = f' tvg-logo="{c["logo"]}"' if c.get("logo") else ""
+            try:
+                dur = int(c.get("duration") or 0)
+            except (TypeError, ValueError):
+                dur = 0
+            # Duracao em segundos no EXTINF = VOD (barra de progresso / seek)
+            # Nome exibe horas e minutos (ex: 1h35min)
+            ext = dur if dur > 0 else -1
+            nome_base = c["nome"]
+            # remove sufixo de duracao antigo se existir
+            nome_limpo = re.sub(r"\s*\(\d+h\d{0,2}min\)$", "", nome_base)
+            nome_limpo = re.sub(r"\s*\(\d+min\)$", "", nome_limpo).strip()
+            rotulo = _fmt_duracao(dur)
+            nome_exib = f"{nome_limpo} ({rotulo})" if rotulo else nome_limpo
             linhas.append(
-                f'#EXTINF:-1 tvg-name="{c["nome"]}"{logo} '
-                f'group-title="{cat}",{c["nome"]}'
+                f'#EXTINF:{ext} tvg-name="{nome_limpo}"{logo} '
+                f'group-title="{cat}",{nome_exib}'
             )
             linhas.append(c["url"])
     with open(path, "w", encoding="utf-8") as f:
@@ -462,7 +669,7 @@ def atualizar_seed(ativos: list[dict]) -> None:
     os.makedirs(os.path.dirname(SEED_FILE), exist_ok=True)
     escrever_m3u(
         [{"nome": c["nome"], "url": c["url"], "grupo": c["grupo"],
-          "logo": c.get("logo", "")} for c in bons],
+          "logo": c.get("logo", ""), "duration": c.get("duration", 0)} for c in bons],
         path=SEED_FILE,
         header_extra=["#EXTM3U", "# SEED auto-atualizado (prioriza origin-fast + user_Id) - FILMES"],
     )
@@ -516,11 +723,17 @@ def main() -> int:
         vistos.add(url)
         # se grupo vazio, tenta inferir pelo nome
         grupo_raw = b.get("grupo") or nome
+        dur = 0
+        try:
+            dur = int(b.get("duration") or 0)
+        except (TypeError, ValueError):
+            dur = 0
         atuais[url] = {
             "nome":  nome,
             "url":   url,
             "grupo": normalizar_categoria(grupo_raw),
             "logo":  (b.get("logo") or "").strip(),
+            "duration": dur if dur > 0 else 0,
         }
     log(f"Unicos apos dedup: {len(atuais)} ({dups} dups)")
 
@@ -550,7 +763,7 @@ def main() -> int:
             canais_estado[url] = {**c, "falhas": 0, "visto_em": agora}
         else:
             prev = canais_estado.get(url, {**c, "falhas": 0})
-            prev.update({k: c[k] for k in ("nome", "grupo", "logo", "url")})
+            prev.update({k: c[k] for k in ("nome", "grupo", "logo", "url", "duration") if k in c})
             prev["falhas"] = prev.get("falhas", 0) + 1
             canais_estado[url] = prev
 
