@@ -1,6 +1,6 @@
 __pycache__/
 *.pyc
-debug_soplay_filmes/
+debug_soplay/
 .DS_Store
 *.log
 .env

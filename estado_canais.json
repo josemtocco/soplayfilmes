@@ -1,37 +1,261 @@
 {
   "canais": {
-    "https://vz-668c4853-3ab.b-cdn.net/685b75e6-9ca9-4c05-91b1-6379ea166876/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
-      "nome": "Filme 01",
-      "url": "https://vz-668c4853-3ab.b-cdn.net/685b75e6-9ca9-4c05-91b1-6379ea166876/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
-      "grupo": "Filmes",
-      "logo": "https://vz-668c4853-3ab.b-cdn.net/685b75e6-9ca9-4c05-91b1-6379ea166876/thumbnail.jpg",
+    "https://origin-fast.b-cdn.net/ACELERADOS/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "Acelerados",
+      "url": "https://origin-fast.b-cdn.net/ACELERADOS/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Esportes",
+      "logo": "",
       "falhas": 0,
-      "visto_em": "2026-10-25T13:35:19"
+      "visto_em": "2026-10-25T02:47:07"
     },
-    "https://vz-ce1e5031-6d5.b-cdn.net/694fa57c-cfcd-4bde-8146-ffaf8724ba89/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
-      "nome": "Filme 02",
-      "url": "https://vz-ce1e5031-6d5.b-cdn.net/694fa57c-cfcd-4bde-8146-ffaf8724ba89/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
-      "grupo": "Filmes",
-      "logo": "https://vz-ce1e5031-6d5.b-cdn.net/694fa57c-cfcd-4bde-8146-ffaf8724ba89/thumbnail.jpg",
+    "https://origin-fast.b-cdn.net/DESIMPEDIDOS/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "Desimpedidos",
+      "url": "https://origin-fast.b-cdn.net/DESIMPEDIDOS/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Esportes",
+      "logo": "",
       "falhas": 0,
-      "visto_em": "2026-10-25T13:35:19"
+      "visto_em": "2026-10-25T02:47:07"
     },
-    "https://vz-ce1e5031-6d5.b-cdn.net/a28fa0fe-db36-4ca8-8d27-104e46fe44f2/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
-      "nome": "Filme 03",
-      "url": "https://vz-ce1e5031-6d5.b-cdn.net/a28fa0fe-db36-4ca8-8d27-104e46fe44f2/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
-      "grupo": "Filmes",
-      "logo": "https://vz-ce1e5031-6d5.b-cdn.net/a28fa0fe-db36-4ca8-8d27-104e46fe44f2/thumbnail.jpg",
+    "https://origin-fast.b-cdn.net/FUEL_TV/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "Fuel TV",
+      "url": "https://origin-fast.b-cdn.net/FUEL_TV/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Esportes",
+      "logo": "",
       "falhas": 0,
-      "visto_em": "2026-10-25T13:35:19"
+      "visto_em": "2026-10-25T02:47:07"
     },
-    "https://vz-ce1e5031-6d5.b-cdn.net/0065048c-71b2-409c-8231-c720f5be2091/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
-      "nome": "Filme 04",
-      "url": "https://vz-ce1e5031-6d5.b-cdn.net/0065048c-71b2-409c-8231-c720f5be2091/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
-      "grupo": "Filmes",
-      "logo": "https://vz-ce1e5031-6d5.b-cdn.net/0065048c-71b2-409c-8231-c720f5be2091/thumbnail.jpg",
+    "https://origin-fast.b-cdn.net/NSPORTS/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "NSports",
+      "url": "https://origin-fast.b-cdn.net/NSPORTS/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Esportes",
+      "logo": "",
       "falhas": 0,
-      "visto_em": "2026-10-25T13:35:19"
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://origin-fast.b-cdn.net/BORAFILMES_FAST/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "Bora Filmes",
+      "url": "https://origin-fast.b-cdn.net/BORAFILMES_FAST/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Filmes",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://origin-fast.b-cdn.net/FILM_ACTION/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "Film Action",
+      "url": "https://origin-fast.b-cdn.net/FILM_ACTION/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Filmes",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://origin-fast.b-cdn.net/FILM_EMOTION/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "Film Emotion",
+      "url": "https://origin-fast.b-cdn.net/FILM_EMOTION/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Filmes",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://origin-fast.b-cdn.net/FILM_FAMILY/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "Film Family",
+      "url": "https://origin-fast.b-cdn.net/FILM_FAMILY/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Filmes",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://origin-fast.b-cdn.net/FILM_PLUS/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "Film Plus",
+      "url": "https://origin-fast.b-cdn.net/FILM_PLUS/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Filmes",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://ssai.nxtv.com.br/c/film-family/v00000001000000001231a4c94614e203/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "Film Plus Family",
+      "url": "https://ssai.nxtv.com.br/c/film-family/v00000001000000001231a4c94614e203/playlist.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Filmes",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://origin-fast.b-cdn.net/WESTERN_BOUND/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "Western Bound",
+      "url": "https://origin-fast.b-cdn.net/WESTERN_BOUND/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Filmes",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://origin-fast.b-cdn.net/LEO_E_LULLY/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "Leo e Lully",
+      "url": "https://origin-fast.b-cdn.net/LEO_E_LULLY/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Infantil",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://origin-fast.b-cdn.net/BMC_NEWS/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "BM&C News",
+      "url": "https://origin-fast.b-cdn.net/BMC_NEWS/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Noticias",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://origin-fast.b-cdn.net/CNN_BRASIL/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "CNN Brasil",
+      "url": "https://origin-fast.b-cdn.net/CNN_BRASIL/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Noticias",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://origin-fast.b-cdn.net/CNN_MONEY/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "CNN Brasil Money",
+      "url": "https://origin-fast.b-cdn.net/CNN_MONEY/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Noticias",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://origin-fast.b-cdn.net/OESTE_TV/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "Oeste TV",
+      "url": "https://origin-fast.b-cdn.net/OESTE_TV/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Noticias",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://origin-fast.b-cdn.net/RECORD_NEWS/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "Record News",
+      "url": "https://origin-fast.b-cdn.net/RECORD_NEWS/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Noticias",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://origin-fast.b-cdn.net/CNBC/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "Times Brasil CNBC",
+      "url": "https://origin-fast.b-cdn.net/CNBC/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Noticias",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://origin-fast.b-cdn.net/TV_APARECIDA/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "TV Aparecida",
+      "url": "https://origin-fast.b-cdn.net/TV_APARECIDA/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Religiosos",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://origin-fast.b-cdn.net/AGRO_PLUS/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "Agroplus",
+      "url": "https://origin-fast.b-cdn.net/AGRO_PLUS/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Variedades",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://origin-fast.b-cdn.net/ARTESANATO/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "Canal do Artesanato",
+      "url": "https://origin-fast.b-cdn.net/ARTESANATO/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Variedades",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://origin-fast.b-cdn.net/ENTRETENDO_FAST/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "Entretendo",
+      "url": "https://origin-fast.b-cdn.net/ENTRETENDO_FAST/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Variedades",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://origin-fast.b-cdn.net/GPTV/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "GPTV",
+      "url": "https://origin-fast.b-cdn.net/GPTV/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Variedades",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://edge-proxy-mediatailor-ww2ae.b-cdn.net/nxplay/1889892/master.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "NxPlay 1889892",
+      "url": "https://edge-proxy-mediatailor-ww2ae.b-cdn.net/nxplay/1889892/master.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Variedades",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://edge-proxy.nxtv.com.br/nxplay/2082836/master.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "NxPlay 2082836",
+      "url": "https://edge-proxy.nxtv.com.br/nxplay/2082836/master.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Variedades",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://edge-proxy-mediatailor-ww2ae.b-cdn.net/nxplay/2222223/master.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "NxPlay 2222223",
+      "url": "https://edge-proxy-mediatailor-ww2ae.b-cdn.net/nxplay/2222223/master.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Variedades",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://edge-proxy-mediatailor-ww2ae.b-cdn.net/nxplay/8292355/master.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "NxPlay 8292355",
+      "url": "https://edge-proxy-mediatailor-ww2ae.b-cdn.net/nxplay/8292355/master.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Variedades",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://origin-fast.b-cdn.net/PLAY_TV/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "PlayTV",
+      "url": "https://origin-fast.b-cdn.net/PLAY_TV/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Variedades",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://origin-fast.b-cdn.net/RBTi_MAIS_TV/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "RBTi+ TV",
+      "url": "https://origin-fast.b-cdn.net/RBTi_MAIS_TV/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Variedades",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://origin-fast.b-cdn.net/MOSAICO/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "Rede Mosaico",
+      "url": "https://origin-fast.b-cdn.net/MOSAICO/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Variedades",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://origin-fast.b-cdn.net/TRAVEL_PLUS/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "Travel Plus",
+      "url": "https://origin-fast.b-cdn.net/TRAVEL_PLUS/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Variedades",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
+    },
+    "https://origin-fast.b-cdn.net/VIVAX/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638": {
+      "nome": "Vivax TV",
+      "url": "https://origin-fast.b-cdn.net/VIVAX/index.m3u8?app_id=1&app_name=soplay&user_Id=1078638",
+      "grupo": "Variedades",
+      "logo": "",
+      "falhas": 0,
+      "visto_em": "2026-10-25T02:47:07"
     }
   },
-  "atualizado_em": "2026-10-25T13:35:19"
+  "atualizado_em": "2026-10-25T02:47:07"
 }
