@@ -144,8 +144,11 @@ def limpar_url(url: str) -> str:
                 qs.pop(k, None)
 
         host = (p.netloc or "").lower()
-        # injeta identidade SoPlay nas CDNs conhecidas
-        if any(h in host for h in (
+        # Bunny Stream VOD (vz-XXXX.b-cdn.net): NAO injetar app_id —
+        # query na master m3u8 quebra resolucao relativa e pode silenciar audio
+        is_bunny_vod = host.startswith("vz-") and host.endswith(".b-cdn.net")
+        # Canais live SoPlay: injeta identidade
+        is_soplay_live = (not is_bunny_vod) and any(h in host for h in (
             "origin-fast.b-cdn.net",
             "fast-channels.b-cdn.net",
             "cdn-fast.nxtv.com.br",
@@ -153,11 +156,13 @@ def limpar_url(url: str) -> str:
             "ssai.nxtv.com.br",
             "edge-proxy.nxtv.com.br",
             "edge-proxy-mediatailor",
-            "b-cdn.net",
-            "images.nxtv.com.br",
-            "vod",
-        )):
-            # normaliza chaves (user_Id com I maiusculo como no app)
+        ))
+        if is_bunny_vod:
+            # remove params de identidade se existirem
+            for k in list(qs.keys()):
+                if k.lower() in ("app_id", "app_name", "user_id", "userid", "user_Id"):
+                    qs.pop(k, None)
+        elif is_soplay_live:
             has_app = any(k.lower() == "app_id" for k in qs)
             has_name = any(k.lower() == "app_name" for k in qs)
             has_user = any(k.lower() in ("user_id", "userid") for k in qs)
@@ -641,9 +646,10 @@ def escrever_m3u(canais: list[dict], path: str = OUT_FILE, header_extra: list | 
             rotulo = _fmt_duracao(dur)
             nome_exib = f"{nome_limpo} ({rotulo})" if rotulo else nome_limpo
             desc = f' description="{rotulo}"' if rotulo else ""
+            # audio-track=por: SS IPTV prioriza faixa em portugues quando houver multi-audio
             linhas.append(
                 f'#EXTINF:{ext} tvg-name="{nome_limpo}"{logo} '
-                f'type="video"{desc} group-title="{cat}",{nome_exib}'
+                f'type="video" audio-track="por"{desc} group-title="{cat}",{nome_exib}'
             )
             linhas.append(c["url"])
     with open(path, "w", encoding="utf-8") as f:
