@@ -618,11 +618,12 @@ def escrever_m3u(canais: list[dict], path: str = OUT_FILE, header_extra: list | 
     if header_extra:
         linhas.extend(header_extra)
     else:
+        # Header SS IPTV: size=medium nos tiles; itens usam type="video"
+        linhas[0] = '#EXTM3U size="medium"'
         linhas += [
             "#PLAYLIST: SO Play Filmes auto (SS IPTV)",
             f"#UPDATED: {dt.datetime.now().isoformat(timespec='seconds')}",
             "#EXTSIZE: medium",
-            "#EXTM3U type=vod",
         ]
     for cat in sorted(por_cat, key=lambda x: _slug(x)):
         for c in sorted(por_cat[cat], key=lambda x: _slug(x["nome"])):
@@ -631,18 +632,18 @@ def escrever_m3u(canais: list[dict], path: str = OUT_FILE, header_extra: list | 
                 dur = int(c.get("duration") or 0)
             except (TypeError, ValueError):
                 dur = 0
-            # Duracao em segundos no EXTINF = VOD (barra de progresso / seek)
-            # Nome exibe horas e minutos (ex: 1h35min)
-            ext = dur if dur > 0 else -1
+            # SS IPTV: type="video" habilita pausa / seek / barra de progresso
+            # Duracao em segundos no EXTINF; nome exibe horas e minutos
+            ext = dur if dur > 0 else 0
             nome_base = c["nome"]
-            # remove sufixo de duracao antigo se existir
             nome_limpo = re.sub(r"\s*\(\d+h\d{0,2}min\)$", "", nome_base)
             nome_limpo = re.sub(r"\s*\(\d+min\)$", "", nome_limpo).strip()
             rotulo = _fmt_duracao(dur)
             nome_exib = f"{nome_limpo} ({rotulo})" if rotulo else nome_limpo
+            desc = f' description="{rotulo}"' if rotulo else ""
             linhas.append(
                 f'#EXTINF:{ext} tvg-name="{nome_limpo}"{logo} '
-                f'group-title="{cat}",{nome_exib}'
+                f'type="video"{desc} group-title="{cat}",{nome_exib}'
             )
             linhas.append(c["url"])
     with open(path, "w", encoding="utf-8") as f:
